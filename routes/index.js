@@ -1,12 +1,7 @@
 var express = require('express');
 var router = express.Router();
-var applicant = require('../models/applicant');
+var applicant = require('../controllers/ApplicantController');
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  applicant.getAll().then((res)=>{
-    console.log(res.result);
-  });
-  res.render('index', { title: 'Express' });
-});
+router.get('/',applicant.showAll);
 
 module.exports = router;
