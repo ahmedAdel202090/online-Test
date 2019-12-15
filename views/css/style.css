@@ -6,12 +6,13 @@ body{
     background-color:#fafafa;
 }
 
-.signUp-content, .question-card, .signIn-content{
+.signUp-content, .question-card, .signIn-content, .positions-card{
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.200);
     border: none;
+    border-radius: 3px;
 
 }
-.signUp-content:hover, .question-card:hover , .signIn-content:hover{
+.signUp-content:hover, .question-card:hover , .signIn-content:hover, .positions-card:hover{
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.120);
 }
 
