@@ -8,6 +8,9 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FavoritesManager">
+    <favorites_list name="online-recruitment" />
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -53,7 +56,7 @@
       <workItem from="1576319770448" duration="14595000" />
       <workItem from="1576422425438" duration="1396000" />
       <workItem from="1576488199694" duration="4915000" />
-      <workItem from="1576502182688" duration="4915000" />
+      <workItem from="1576502182688" duration="9621000" />
     </task>
     <servers />
   </component>
