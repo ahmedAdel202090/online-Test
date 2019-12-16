@@ -11,7 +11,17 @@ function add({type}) {
         });
     }));
 }
-
+function all()
+{
+    return new Promise( resolve => {
+        connection.connect().then((con)=>{
+            connection.excuteQuery("SELECT * FROM exam",con).then((response)=>{
+                resolve({result:response.result,next:module.exports});
+                response.end();
+            });
+        });
+    });
+}
 function findOne({eid})
 {
     return new Promise( resolve => {
@@ -39,5 +49,6 @@ function update(eid,{type})
 module.exports={
     add:add,
     findOne:findOne,
-    update,update
+    update,update,
+    all:all
 }

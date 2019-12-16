@@ -6,6 +6,13 @@ function addExam(req,res,next) {
         res.json({success:true});
     });
 }
+function showAll(req,res,next)
+{
+    exam.all().then((response)=>{
+        res.setHeader('content-type','application/json');
+        res.json(response.result);
+    });
+}
 function showExam(req,res,next){
     exam.findOne({eid:req.params.eid}).then((response)=>{
         res.setHeader('content-type','application/json');
@@ -13,8 +20,6 @@ function showExam(req,res,next){
     });
 }
 function updateExam(req,res,next){
-    console.log(req.params.eid);
-    console.log(req.body.type);
     exam.update(req.params.eid,{type:req.body.type}).then((response)=>{
         res.setHeader('content-type','application/json');
         res.json({success:true});
@@ -24,5 +29,6 @@ function updateExam(req,res,next){
 module.exports={
     addExam:addExam,
     showExam:showExam,
-    updateExam:updateExam
+    updateExam:updateExam,
+    showAll:showAll
 }
