@@ -4,6 +4,7 @@ var applicant = require('../controllers/ApplicantController');
 var exam = require('../controllers/ExamController');
 var question = require('../controllers/questionController');
 var position = require('../controllers/positionController');
+var sessionExam= require('../controllers/sessionExamController');
 /* GET home page. */
 router.get('/',applicant.showAll);
 
@@ -25,6 +26,13 @@ router.put('/question/:qid/update',question.updateQ);
 /** position  **/
 
 router.get('/position/showAll',position.showAll);
+
+/** ----------------------------------**/
+
+
+/** sessionExam  **/
+
+router.post('/sessionExam/add',sessionExam.add_Session_Exam);
 
 /** ----------------------------------**/
 
