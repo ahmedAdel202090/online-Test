@@ -33,10 +33,22 @@
                         <div class="mb-5">
                             <h3>Exams</h3>
                         </div>
-                        <div class="ml-3">
-                            <button type="submit"> + Exam</button>
+                        <div class="row ml-3">
+                            <div class="col-2">
+                                <button type="submit"> + Exam</button>
+                            </div>
+                            <div class="exam-search col-10">
+                                <input type="text" name="searchexam" id="searchexam" placeholder="Search exam type">
+                                <button type="submit">Search</button>
+                            </div>
+
                         </div>
+
                         <div class="manageExams mt-5 p-2">
+                            <div class="filterbydate text-right">
+                                <label for="examfilterdate">Date:</label>
+                                <input type="date" name="examfilterdate" id="examfilterdate">
+                            </div>
                             <div class="card mb-2">
                                 <div class="card-body d-flex justify-content-between align-items-center">
                                     <div>
@@ -46,7 +58,7 @@
                                             <h6>Java, c++ and lisp.</h6>
                                         </div>
                                     </div>
-                                    <div>
+                                    <div class="">
                                         <button type="button" class="close" aria-label="Close">
                                             <span aria-hidden="true">&times;</span>
                                         </button>
