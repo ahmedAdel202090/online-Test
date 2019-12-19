@@ -11,7 +11,17 @@ function add_Session_Exam(eid, {Applicant_email}) {
         });
     }));
 }
-
+function get_applicant_exams(email) {
+    return new Promise( resolve => {
+        connection.connect().then((con)=>{
+            connection.excuteQuery("SELECT * FROM session_exam WHERE applicant_email='"+email+"'",con).then((response)=>{
+                resolve({result:response.result,next:module.exports});
+                response.end();
+            });
+        });
+    });
+}
 module.exports = {
-    add_Session_Exam: add_Session_Exam
+    add_Session_Exam: add_Session_Exam,
+    get_applicant_exams:get_applicant_exams
 }

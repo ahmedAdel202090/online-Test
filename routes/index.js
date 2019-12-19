@@ -31,7 +31,7 @@ router.get('/position/showAll',position.showAll);
 
 
 /** sessionExam  **/
-
+router.get('/sessionExam/show_summerized_report/:email',sessionExam.show_summerized_report);
 router.post('/sessionExam/add',sessionExam.add_Session_Exam);
 
 /** ----------------------------------**/
@@ -42,6 +42,7 @@ router.get('/applicant/:email/exam/:eid/solvedQuestions',applicant.showSolvedQue
 router.get('/applicant/:email/exam/:eid/skippedQuestions',applicant.showSkippedQuestions);
 router.get('/applicant/:email/exam/:eid/markedQuestions',applicant.showMarkedQuestions);
 router.get('/applicant/:email/exam/:eid/fullTest',applicant.showFullTest);
+router.put('/applicant/update_ans_of_candidate',applicant.update_ans_of_candidate)
 /**-------------------------------------- **/
 
 module.exports = router;
