@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/all.css">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
     <title>Home</title>
@@ -13,7 +14,47 @@
 
 <body>
     <!-- Header -->
-    
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
+        <div class="container">
+            <a class="navbar-brand" href="#"> <strong>Olte</strong></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navLogedin d-flex justify-content-around align-items-center">
+                <div class="notify mr-2 rounded-circle" >
+                    <a class="nav-link" href="#" ><i class="far fa-bell fa-2x"></i></a>
+                </div>
+                    <div class="">
+                        <a href="" class="text-decoration-none text-reset">
+                            <img src="images/mark-wahlberg-9542335-1-402.jpg" class="rounded-circle" alt="..."
+                                width="45" height="45">
+                            Mark
+                        </a>
+                    </div>
+
+                <div class="ml-3">
+                    <button class="" type="submit">Log out</button>
+                </div>
+
+            </div>
+            <div class="navRegister d-none">
+                <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Login</button>
+                <button class="btn btn-primary my-2 my-sm-0" type="submit">Sign up</button>
+            </div>
+        </div>
+    </nav>
+    <div class="container" >
+        <div class="notifDiv w-25 float-right">
+            <ul class="list-group border-none">
+                <li class="list-group-item">Cras justo odio</li>
+                <li class="list-group-item">Dapibus ac facilisis in</li>
+                <li class="list-group-item">Morbi leo risus</li>
+                <li class="list-group-item">Porta ac consectetur ac</li>
+                <li class="list-group-item">Vestibulum at eros</li>
+            </ul>
+        </div>
+    </div>
     <!-- End Header -->
 
 
@@ -21,7 +62,7 @@
     <section>
         <div class="container">
             <div class="row justify-content-around mt-5">
-                
+
 
             </div>
         </div>
@@ -38,6 +79,8 @@
 
 
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/script.js"></script>
 </body>
 
 </html>
