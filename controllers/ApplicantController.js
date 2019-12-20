@@ -8,6 +8,15 @@ function showAll(req,res,next) {
     });
 }
 
+function update_ans_of_candidate(req,res,next)
+{
+    applicant_answers.update_ans_of_candidate(req.body.email,req.body.eid,req.body.qid,req.body.aid).then((response)=>{
+        res.setHeader('content-type','application/json');
+        res.json({success:true});
+    });
+}
+
+
 function showSolvedQuestions(req,res,next)
 {
     applicant_answers.getSolvedQuestions(req.params.email,req.params.eid).then((response)=>{
@@ -42,5 +51,6 @@ module.exports={
     showSolvedQuestions:showSolvedQuestions,
     showSkippedQuestions:showSkippedQuestions,
     showMarkedQuestions:showMarkedQuestions,
-    showFullTest:showFullTest
+    showFullTest:showFullTest,
+    update_ans_of_candidate:update_ans_of_candidate
 };
