@@ -21,7 +21,7 @@ body{
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.120);
 }
 
-.question-card .card-header, nav.navbar{
+.question-card .card-header, .notification-card .card-header,  nav.navbar{
     background-color: #e3f2fd;
 }
 
