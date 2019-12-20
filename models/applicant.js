@@ -5,8 +5,8 @@ function getAll() {
         connection.connect().then((con)=>{
             connection.excuteQuery('select * from applicant',con)
                 .then((response)=>{
-                    response.destroy();
-                   resolve({result:response.result , next:module.exports});
+                    response.end();
+                    resolve({result:response.result , next:module.exports});
                 });
         }).catch((err) =>{
             console.log(err);

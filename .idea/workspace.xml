@@ -8,6 +8,9 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FavoritesManager">
+    <favorites_list name="online-recruitment" />
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -26,6 +29,7 @@
     <property name="js.last.introduce.type" value="VAR" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="settings.github" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -49,7 +53,10 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1576319728619</updated>
-      <workItem from="1576319770448" duration="13992000" />
+      <workItem from="1576319770448" duration="14595000" />
+      <workItem from="1576422425438" duration="1396000" />
+      <workItem from="1576488199694" duration="4915000" />
+      <workItem from="1576502182688" duration="18467000" />
     </task>
     <servers />
   </component>
@@ -61,7 +68,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
