@@ -22,10 +22,10 @@ body{
 }
 
 .question-card .card-header{
-    background-color: #8b92f8cb;
+    background-color: #e3f2fd;
 }
 
-.form-radio
+/* .form-radio
 {
      -webkit-appearance: none;
      -moz-appearance: none;
@@ -59,4 +59,4 @@ body{
 .form-radio:checked
 {
      background-color: #f1f1f1;
-}
+} */
