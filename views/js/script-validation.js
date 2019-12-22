@@ -16,7 +16,7 @@ form.addEventListener('submit', (e) => {
     messages = 'Name is required'
     document.getElementById('nameError').innerHTML = messages
   }
-
+  if(email.value === '' || name.value == null)
   if (password.value.length == 0 || password.value.length == null) {
     messages = 'You must enter password for security'
     document.getElementById('passwordError').innerHTML = messages

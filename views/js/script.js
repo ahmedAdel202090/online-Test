@@ -1,12 +1,8 @@
-// ---------- Sign up&in validation ----------
-const name = document.getElementById('name')
-const password = document.getElementById('password')
-const form = document.getElementById('form')
-const errorElement = document.getElementById('error')
 
 
-
-
+$(function () {
+    $("#pageHeader").load("header.html");
+});
 
 
 
@@ -20,13 +16,13 @@ $(".notify").click(function () {
 //         $(".notifDiv").hide(); 
 //     } 
 // }); 
-$( document ).on( 'keydown', function ( e ) {
-    if ( e.keyCode === 27 ) {
-        $( ".notifDiv" ).hide();
+$(document).on('keydown', function (e) {
+    if (e.keyCode === 27) {
+        $(".notifDiv").hide();
     }
 });
 
-$(function(){
+$(function () {
     $(".pageHeader").load("header.html");
-  });
+});
 
