@@ -24,6 +24,10 @@ body{
 .question-card .card-header, .notification-card .card-header,  nav.navbar{
     background-color: #e3f2fd;
 }
+.checkError{
+    color: red;
+    font-style: italic;
+}
 
 /* .form-radio
 {
