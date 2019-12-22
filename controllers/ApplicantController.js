@@ -5,6 +5,7 @@ function showAll(req,res,next) {
     applicant.getAll().then((response)=>{
        res.contentType('json');
        res.send(response.result);
+
     });
 }
 
