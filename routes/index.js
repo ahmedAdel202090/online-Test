@@ -6,7 +6,12 @@ var question = require('../controllers/questionController');
 var position = require('../controllers/positionController');
 var sessionExam= require('../controllers/sessionExamController');
 /* GET home page. */
+
 router.get('/',function (req,res,next) {
+    res.render('index');
+});
+
+router.get('/signin',function (req,res,next) {
     res.render('signin',{title:['Welcome','hello','dasd']});
 });
 router.get('/signup',function (req,res,next) {
@@ -33,6 +38,11 @@ router.get('/editExam',function (req,res,next) {
 
 router.get('/hrCandidates',function (req,res,next) {
     res.render('HR-candidates');
+});
+
+
+router.get('/hrCandidateExamPage',function (req,res,next) {
+    res.render('HR-candidateExamPage');
 });
 
 router.get('/hrCandidateProfile',function (req,res,next) {

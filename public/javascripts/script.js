@@ -22,9 +22,7 @@ $(document).on('keydown', function (e) {
     }
 });
 
-$(function () {
-    alert("kkkkkkk");
-    $("#pageHeader").load("/public/views/header.html");
-    alert("kkkkkkk");
-});
+// $(function () {
+//     $("#pageHeader").load("/public/views/header.html");
+// });
 

@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="../css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
     <title>Home</title>
-    <link rel="shortcut icon" href="../images/if_laptop_1805073.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="images/if_laptop_1805073.ico" type="image/x-icon">
 </head>
 
 <body>
@@ -23,9 +23,9 @@
             <div class="row justify-content-around mt-5">
                 <div class="col-12 col-md-3">
                     <div class="list-group">
-                        <a href="/hrCandidates" class="list-group-item list-group-item-action">Applications</a>
+                        <a href="/hrApplicants" class="list-group-item list-group-item-action">Applications</a>
                         <a href="/hrExams" class="list-group-item list-group-item-action">Exams</a>
-                        <a href="/hrApplicants" class="list-group-item list-group-item-action">Candidates</a>
+                        <a href="/hrCandidates" class="list-group-item list-group-item-action">Candidates</a>
                     </div>
                 </div>
                 <div class="col-12 col-md-9">
@@ -35,47 +35,41 @@
                         </div>
                         <div class="manageExams mt-5 p-2">
                             <div class="text-right mb-4">
-                                <button> + Question</button>
+                                <button type="submit" name="addQuestionButton" id="addQuestionButton"> + Question</button>
                             </div>
                             <div class="card addQuestion-card">
                                 <h5 class="card-header">Q1
-                                    <input type="text" class="col-10" value="">
+                                    <input type="text" class="col-11" value="">
                                 </h5>
                                 <div class="card-body p-4">
                                     <div class="row mb-4">
                                         <div class="col-12 col-md-6">
-                                            <input type="radio" name="choice" id=""
-                                                class="form-radio border border-danger" value="">
-                                            <input type="text">
+                                           Ans1
+                                            <input type="text" name="ans1Input" id="ans1Input">
                                         </div>
                                         <div class="col-12 col-md-6">
-                                            <input type="radio" name="choice" id=""
-                                                class="form-radio border border-danger" value="">
-                                            <input type="text">
+                                          Ans2
+                                            <input type="text" name="ans2Input" id="ans2Input">
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-12 col-md-6">
-                                            <input type="radio" name="choice" id=""
-                                                class="form-radio border border-danger" value="">
-                                            <input type="text">
+                                          Ans3
+                                            <input type="text" name="ans3Input" id="ans3Input">
                                         </div>
                                         <div class="col-12 col-md-6">
-                                            <input type="radio" name="choice" id=""
-                                                class="form-radio border border-danger" value="">
-                                            <input type="text">
+                                            Ans4
+                                            <input type="text" name="ans4Input" id="ans4Input">
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="mt-5 text-right">
-                                <button type="submit">Submit</button>
+                                <button type="submit" name="submitExam" id="submitExam">Submit</button>
                             </div>
                         </div>
                     </div>
                 </div>
-
-
             </div>
         </div>
     </section>
@@ -90,7 +84,9 @@
     <!-- End Footer -->
 
 
-    <script src="../js/bootstrap.min.js"></script>
+    <script src="javascripts/bootstrap.min.js"></script>
+    <script src="javascripts/jquery-3.4.1.min.js"></script>
+    <script src="javascripts/script.js"></script>
 </body>
 
 </html>
