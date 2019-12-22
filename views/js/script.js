@@ -1,3 +1,16 @@
+// ---------- Sign up&in validation ----------
+const name = document.getElementById('name')
+const password = document.getElementById('password')
+const form = document.getElementById('form')
+const errorElement = document.getElementById('error')
+
+
+
+
+
+
+
+
 $(".notify").click(function () {
     $(".notifDiv").toggle();
 });
@@ -13,5 +26,7 @@ $( document ).on( 'keydown', function ( e ) {
     }
 });
 
-
+$(function(){
+    $(".pageHeader").load("header.html");
+  });
 

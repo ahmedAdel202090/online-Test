@@ -33,35 +33,46 @@
                 <div class="col-12 col-md-4 col-sm-12">
                     <div class="card signUp-content">
                         <div class="card-body">
-                            <form action="" class="text-center">
+                            <form action="/" method="GET" id="signUpForm" class=" text-center">
                                 <div class="mb-4">
                                     <h3>Sign Up</h3>
                                 </div>
                                 <div class="row">
                                     <div class="col-12 mb-3">
-                                        <input type="text" name="name" id="name" placeholder="Username">
+                                        <input type="text" name="name" id="name" placeholder="Username" >
+                                        <br>
+                                        <small id="nameError" class="checkError"></small>
                                     </div>
                                     <div class="col-12 mb-3">
-                                        <input type="email" name="email" id="email" placeholder="Email">
+                                        <input type="email" name="email" id="email" placeholder="Email" >
+                                        <br>
+                                        <small id="emailError" class="checkError"></small>
+                                    </div>
+                                    <div class="col-12 mb-3">
+                                        <input type="password" name="password" id="password" placeholder="Password" >
+                                        <br>
+                                        <small id="passwordError" class="checkError"></small>
                                     </div>
                                     <div class="col-12 mb-3">
                                         <input type="tel" name="number" id="number" placeholder="Phone number">
                                     </div>
                                     <div class="col-12 mb-3">
-                                        <select>
+                                        <select required>
                                             <option value="Choose position">Choose position</option>
                                             <option value="Android Developer">Android Developer</option>
                                             <option value="IOS Developer">IOS Developer</option>
                                         </select>
                                     </div>
                                     <div class="col-12 mb-3">
-                                        <div class="row">
+                                        <div class="row" >
                                             <div class="col-12 col-md-4">
                                                 <label for="CV"> Upload your CV</label>
                                             </div>
                                             <div class="col-12 col-md-6">
                                                 <input type="file" name="CV" id="CV" value="CV">
                                             </div>
+                                            <br>
+                                            <small id="cvError" class="checkError"></small>
                                         </div>
                                     </div>
                                 </div>
@@ -89,6 +100,9 @@
 
 
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/script-validation.js"></script>
+    
 </body>
 
 </html>
