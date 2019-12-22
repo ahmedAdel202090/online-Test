@@ -6,8 +6,9 @@ var question = require('../controllers/questionController');
 var position = require('../controllers/positionController');
 var sessionExam= require('../controllers/sessionExamController');
 /* GET home page. */
-router.get('/',applicant.showAll);
-
+router.get('/',function (req,res,next) {
+    res.render('signin',{title:['Welcome','hello','dasd']});
+});
 
 /** exam  **/
 router.get('/exam/show',exam.showAll);
