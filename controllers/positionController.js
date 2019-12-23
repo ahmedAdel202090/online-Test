@@ -1,13 +1,12 @@
 var position = require('../models/position');
 
-function showAll(req,res,next)
+
+function addPosition(req,res,next)
 {
-    position.all().then((response)=>{
-        res.setHeader('content-type','application/json');
-        res.json(response.result);
+    position.addPosition(req.body.name).then((response)=>{
+        res.redirect('/hr-dashboard');
     });
 }
-
 module.exports = {
-    showAll: showAll
+    addPosition:addPosition
 }

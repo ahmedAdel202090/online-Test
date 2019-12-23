@@ -15,16 +15,23 @@ var excuteQuery= function(query='',con=module.exports.con) {
         con.query(query, function (err, result, fields) {
             if (err)
                 reject(err);
-            resolve({result:result,next:module.exports.excuteQuery,end:function () {
+            resolve({result:result,queryResult:module.exports.queryResults,push:module.exports.resultPush,next:module.exports.excuteQuery,end:function () {
                     module.exports.con.end();
+                    console.log('disconnected');
                 }});
         });
 
     });
 }
+var resultPush=function (result){
+    module.exports.queryResults.push(result);
+}
+
 
 module.exports={
     con:null,
     connect:connect,
-    excuteQuery:excuteQuery
+    excuteQuery:excuteQuery,
+    resultPush:resultPush,
+    queryResults:[]
 }

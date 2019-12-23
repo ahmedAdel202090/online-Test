@@ -5,18 +5,36 @@ var exam = require('../controllers/ExamController');
 var question = require('../controllers/questionController');
 var position = require('../controllers/positionController');
 var sessionExam= require('../controllers/sessionExamController');
+var hr=require('../controllers/HR-Controller');
 /* GET home page. */
-
 router.get('/',function (req,res,next) {
     res.render('index');
 });
 
-router.get('/signin',function (req,res,next) {
-    res.render('signin',{title:['Welcome','hello','dasd']});
-});
-router.get('/signup',function (req,res,next) {
-    res.render('signup');
-});
+/**applicant view**/
+router.post('/validate-candidate',applicant.validateEmail);
+router.get('/candidate-dashboard',applicant.index);
+router.get('/signin-applicant',applicant.showLogin);
+router.post('/applicant-login',applicant.login);
+router.get('/applicant/:email/apply/:pid',applicant.applyPosition);
+router.get('/signup-applicant',applicant.showSignUp);
+router.post('/register-applicant',applicant.signup);
+
+
+router.get('/logout',applicant.logout);
+/**---------------------------------------**/
+
+/**HR**/
+router.get('/hr-dashboard',hr.index);
+router.post('/addPosition',position.addPosition);
+router.get('/applicant/:email/cv',hr.showCv);
+router.get('/applicant/:email/approve',hr.approve);
+router.get('/applicant/:email/disapprove',hr.disApprove);
+/**----------------------**/
+
+/**HR Exams **/
+router.get('/hrExams',exam.index);
+/**--------------------------- **/
 router.get('/header',function (req,res,next) {
     res.render('header');
 });
@@ -24,13 +42,8 @@ router.get('/notifications',function (req,res,next) {
     res.render('notifications');
 });
 
-router.get('/hrApplicants',function (req,res,next) {
-    res.render('HR-main');
-});
 
-router.get('/hrExams',function (req,res,next) {
-    res.render('HR-exams');
-});
+
 
 router.get('/editExam',function (req,res,next) {
     res.render('HR-editExam');
@@ -57,9 +70,6 @@ router.get('/candidateExams',function (req,res,next) {
     res.render('Candidate-allExams');
 });
 
-router.get('/CandidateAvaPositions',function (req,res,next) {
-    res.render('Candidate-avaPositions');
-});
 
 router.get('/CandidateExamPage',function (req,res,next) {
     res.render('Candidate-examPage');
@@ -67,7 +77,6 @@ router.get('/CandidateExamPage',function (req,res,next) {
 
 
 /** exam  **/
-router.get('/exam/show',exam.showAll);
 router.post('/exam/add',exam.addExam);
 router.get('/exam/:eid/show',exam.showExam);
 router.put('/exam/:eid/update',exam.updateExam);
@@ -82,7 +91,6 @@ router.put('/question/:qid/update',question.updateQ);
 
 /** position  **/
 
-router.get('/position/showAll',position.showAll);
 
 /** ----------------------------------**/
 

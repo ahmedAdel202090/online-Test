@@ -6,11 +6,11 @@ function addExam(req,res,next) {
         res.json({success:true});
     });
 }
-function showAll(req,res,next)
+
+function index(req,res,next)
 {
     exam.all().then((response)=>{
-        res.setHeader('content-type','application/json');
-        res.json(response.result);
+        res.render('HR-exams',{exams:response.result});
     });
 }
 function showExam(req,res,next){
@@ -30,5 +30,5 @@ module.exports={
     addExam:addExam,
     showExam:showExam,
     updateExam:updateExam,
-    showAll:showAll
+    index:index
 }

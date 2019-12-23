@@ -100,3 +100,30 @@ $(document).ready(function () {
 
 
 });
+var done=false;
+$("#signUpForm").submit(function (e) {
+  if(!done)
+  {
+    e.preventDefault();
+    $.ajax({
+      url:'http://localhost:3005/validate-candidate',
+      type:'post',
+      data:$("#signUpForm").serialize(),
+      dataType:'json',
+      success:function (data) {
+        if(!data.existed)
+        {
+          done=true;
+          $("#signUpForm").submit();
+        }
+        else
+        {
+          $("#email").css('border','2px solid red');
+          document.getElementById('emailError').innerHTML = 'this email already existed';
+
+        }
+      }
+
+    });
+  }
+});
