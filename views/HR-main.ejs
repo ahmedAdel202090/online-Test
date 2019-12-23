@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="../css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
     <title>Home</title>
-    <link rel="shortcut icon" href="../images/if_laptop_1805073.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="images/if_laptop_1805073.ico" type="image/x-icon">
 </head>
 
 <body>
@@ -23,9 +23,9 @@
             <div class="row justify-content-around mt-5">
                 <div class="col-12 col-md-3">
                     <div class="list-group">
-                        <a href="HR-main.html" class="list-group-item list-group-item-action active">Applications</a>
-                        <a href="HR-exams.html" class="list-group-item list-group-item-action">Exams</a>
-                        <a href="HR-candidates.html" class="list-group-item list-group-item-action">Candidates</a>
+                        <a href="/hrApplicants" class="list-group-item list-group-item-action active">Applications</a>
+                        <a href="/hrExams" class="list-group-item list-group-item-action">Exams</a>
+                        <a href="/hrCandidates" class="list-group-item list-group-item-action">Candidates</a>
                     </div>
                 </div>
                 <div class="col-12 col-md-9">
@@ -35,25 +35,17 @@
                         </div>
                         <div class="addPosition">
                             <div class="">
-                                <input type="text" name="addPostion" id="addPostionInput" placeholder="Add position">
-                                <button type="submit">Add</button>
+                                <input type="text" name="addPostionInput" id="addPostionInput"
+                                    placeholder="Add position">
+                                <button type="submit" name="addPostionButton" id="addPostionButton">Add</button>
                             </div>
                         </div>
                         <div class="managePositions mt-4 p-2">
                             <ul class="list-group w-50">
+
                                 <li class="list-group-item d-flex justify-content-between">
                                     <div>
                                         Tester engineer
-                                    </div>
-                                    <div>
-                                        <button type="button" class="close" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
-                                    </div>
-                                </li>
-                                <li class="list-group-item d-flex justify-content-between">
-                                    <div>
-                                        Dev ops
                                     </div>
                                     <div>
                                         <button type="button" class="close" aria-label="Close">
@@ -78,11 +70,13 @@
                                         <h5>Ahmed Adel Yousry Ibrahim</h5>
                                     </div>
                                     <div class="">
-                                        <button type="submit">Show CVs</button>
+                                        <button type="submit" name="showCV" id="showCV">Show CVs</button>
                                     </div>
                                     <div>
-                                        <button>Approve</button>
-                                        <button>Diapprove</button>
+                                        <button type="submit" name="approveCandidate"
+                                            id="approveCandidate">Approve</button>
+                                        <button type="submit" name="disapproveCandidate"
+                                            id="disapproveCandidate">Diapprove</button>
                                     </div>
                                 </div>
                             </div>
@@ -103,7 +97,9 @@
     <!-- End Footer -->
 
 
-    <script src="../js/bootstrap.min.js"></script>
+    <script src="javascripts/bootstrap.min.js"></script>
+    <script src="javascripts/jquery-3.4.1.min.js"></script>
+    <script src="javascripts/script.js"></script>
 </body>
 
 </html>

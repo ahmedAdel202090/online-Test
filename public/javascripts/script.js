@@ -1,8 +1,8 @@
 
 
-$(function () {
-    $("#pageHeader").load("header.html");
-});
+// $(function () {
+//     $("#pageHeader").load("header.html");
+// });
 
 
 
@@ -22,7 +22,7 @@ $(document).on('keydown', function (e) {
     }
 });
 
-$(function () {
-    $(".pageHeader").load("header.html");
-});
+// $(function () {
+//     $("#pageHeader").load("/public/views/header.html");
+// });
 

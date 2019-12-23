@@ -15,12 +15,12 @@
     <!-- Header -->
 
     <!-- End Header -->
-    <% for(var i=0;i<title.length;i++){ %>
+    <!-- <% for(var i=0;i<title.length;i++){ %>
             <h1>
                 <%= title[i] %>
             </h1>
      <% } %>
-
+ -->
 
 
 
@@ -31,20 +31,27 @@
                 <div class="col-12 col-md-4 col-sm-12">
                     <div class="card signIn-content">
                         <div class="card-body">
-                            <form action="" class="text-center">
+                            <form action="#" method="GET" id="signInForm" class="text-center" >
                                 <div class="mb-4">
                                     <h3>Sign In</h3>
                                 </div>
                                 <div class="row">
                                     <div class="col-12 mb-3">
                                         <input type="text" name="name" id="name" placeholder="Username">
+                                        <br>
+                                        <small id="nameError" class="checkError"></small>
                                     </div>
                                     <div class="col-12 mb-3">
-                                        <input type="password" name="password" id="email" placeholder="Password">
+                                        <input type="password" name="password" id="password" placeholder="Password">
+                                        <br>
+                                        <small id="passwordError" class="checkError"></small>
                                     </div>
                                 </div>
                                 <div class="">
                                     <button type="submit" name="signUp" id="submitButton">Sign In</button>
+                                </div>
+                                <div class="mt-2">
+                                    <a href="/signup">You don't have an account!</a>
                                 </div>
                             </form>
                         </div>
@@ -66,7 +73,9 @@
     <!-- End Footer -->
 
 
-    <script src="js/bootstrap.min.js"></script>
+    <script src="javascripts/bootstrap.min.js"></script>
+    <script src="javascripts/jquery-3.4.1.min.js"></script>
+    <script src="javascripts/script-validation.js"></script>
 </body>
 
 </html>

@@ -6,9 +6,65 @@ var question = require('../controllers/questionController');
 var position = require('../controllers/positionController');
 var sessionExam= require('../controllers/sessionExamController');
 /* GET home page. */
+
 router.get('/',function (req,res,next) {
+    res.render('index');
+});
+
+router.get('/signin',function (req,res,next) {
     res.render('signin',{title:['Welcome','hello','dasd']});
 });
+router.get('/signup',function (req,res,next) {
+    res.render('signup');
+});
+router.get('/header',function (req,res,next) {
+    res.render('header');
+});
+router.get('/notifications',function (req,res,next) {
+    res.render('notifications');
+});
+
+router.get('/hrApplicants',function (req,res,next) {
+    res.render('HR-main');
+});
+
+router.get('/hrExams',function (req,res,next) {
+    res.render('HR-exams');
+});
+
+router.get('/editExam',function (req,res,next) {
+    res.render('HR-editExam');
+});
+
+router.get('/hrCandidates',function (req,res,next) {
+    res.render('HR-candidates');
+});
+
+
+router.get('/hrCandidateExamPage',function (req,res,next) {
+    res.render('HR-candidateExamPage');
+});
+
+router.get('/hrCandidateProfile',function (req,res,next) {
+    res.render('HR-candidateProfile');
+});
+
+router.get('/hrAddExam',function (req,res,next) {
+    res.render('HR-addExam');
+});
+
+router.get('/candidateExams',function (req,res,next) {
+    res.render('Candidate-allExams');
+});
+
+router.get('/CandidateAvaPositions',function (req,res,next) {
+    res.render('Candidate-avaPositions');
+});
+
+router.get('/CandidateExamPage',function (req,res,next) {
+    res.render('Candidate-examPage');
+});
+
 
 /** exam  **/
 router.get('/exam/show',exam.showAll);
