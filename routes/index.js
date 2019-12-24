@@ -49,18 +49,16 @@ router.get('/editExam',function (req,res,next) {
     res.render('HR-editExam');
 });
 
-router.get('/hrCandidates',function (req,res,next) {
-    res.render('HR-candidates');
-});
-
+router.get('/hrCandidates',applicant.get_all_cand_approved_not_accepted);
+router.get('/hrCandidates_get_one',applicant.findOne);
 
 router.get('/hrCandidateExamPage',function (req,res,next) {
     res.render('HR-candidateExamPage');
 });
 
-router.get('/hrCandidateProfile',function (req,res,next) {
-    res.render('HR-candidateProfile');
-});
+// router.get('/hrCandidateProfile',function (req,res,next) {
+//     res.render('HR-candidateProfile');
+// });
 
 router.get('/hrAddExam',function (req,res,next) {
     res.render('HR-addExam');
@@ -75,6 +73,9 @@ router.get('/CandidateExamPage',function (req,res,next) {
     res.render('Candidate-examPage');
 });
 
+
+router.post('/acceptCand',applicant.accept);
+router.post('/unacceptCand',applicant.unaccept);
 
 /** exam  **/
 router.post('/exam/add',exam.addExam);
@@ -96,7 +97,7 @@ router.put('/question/:qid/update',question.updateQ);
 
 
 /** sessionExam  **/
-router.get('/sessionExam/show_summerized_report/:email',sessionExam.show_summerized_report);
+router.get('/hrCandidateProfile/:email',sessionExam.show_summerized_report);
 router.post('/sessionExam/add',sessionExam.add_Session_Exam);
 
 /** ----------------------------------**/

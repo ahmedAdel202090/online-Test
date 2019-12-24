@@ -141,6 +141,11 @@ function update_ans_of_candidate(req,res,next)
     });
 }
 
+function get_all_cand_approved_not_accepted(req,res,next){
+    applicant.get_all_cand_approved_not_accepted().then((response)=>{
+        res.render('HR-candidates',{candidates:response.result});
+    });
+}
 
 function showSolvedQuestions(req,res,next)
 {
@@ -171,6 +176,25 @@ function showFullTest(req,res,next)
         res.send(response.result);
     });
 }
+
+function findOne(req,res,next){
+    applicant.findOne(req.query.searchCandidate).then((response)=>{
+        res.render('HR-candidates',{candidates:response.result});
+    });
+}
+
+function accept(req,res,next){
+    applicant.accept(req.body.email).then((response)=>{
+        res.redirect('/hrCandidates');
+    });
+}
+
+function unaccept(req,res,next){
+    applicant.unaccept(req.body.email).then((response)=>{
+        res.redirect('/hrCandidates');
+    });
+}
+
 module.exports={
     showSolvedQuestions:showSolvedQuestions,
     showSkippedQuestions:showSkippedQuestions,
@@ -184,5 +208,9 @@ module.exports={
     showLogin:showLogin,
     validateEmail:validateEmail,
     showSignUp:showSignUp,
-    applyPosition:applyPosition
+    applyPosition:applyPosition,
+    get_all_cand_approved_not_accepted:get_all_cand_approved_not_accepted,
+    findOne:findOne,
+    accept:accept,
+    unaccept:unaccept
 };
