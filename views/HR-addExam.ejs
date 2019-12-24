@@ -33,41 +33,54 @@
                         <div class="mb-5">
                             <h3>Add exam</h3>
                         </div>
-                        <div class="manageExams mt-5 p-2">
-                            <div class="text-right mb-4">
-                                <button type="submit" name="addQuestionButton" id="addQuestionButton"> + Question</button>
-                            </div>
-                            <div class="card addQuestion-card">
-                                <h5 class="card-header">Q1
-                                    <input type="text" class="col-11" value="">
-                                </h5>
-                                <div class="card-body p-4">
-                                    <div class="row mb-4">
-                                        <div class="col-12 col-md-6">
-                                           Ans1
-                                            <input type="text" name="ans1Input" id="ans1Input">
-                                        </div>
-                                        <div class="col-12 col-md-6">
-                                          Ans2
-                                            <input type="text" name="ans2Input" id="ans2Input">
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-12 col-md-6">
-                                          Ans3
-                                            <input type="text" name="ans3Input" id="ans3Input">
-                                        </div>
-                                        <div class="col-12 col-md-6">
-                                            Ans4
-                                            <input type="text" name="ans4Input" id="ans4Input">
-                                        </div>
-                                    </div>
+                        <div class="mb-5">
+                            <form action="/addExam" method="post">
+                                <div>
+                                    <label>Name: </label>
+                                    <input type="text" name="name" class="col-11" value="">
                                 </div>
-                            </div>
-                            <div class="mt-5 text-right">
-                                <button type="submit" name="submitExam" id="submitExam">Submit</button>
-                            </div>
+                                <div>
+                                    <label>Type: </label>
+                                    <input type="text" name="type" class="col-11" value="">
+                                </div>
+                                <button type="submit" name="addQuestionButton" id="addQuestionButton">Add</button>
+                            </form>
                         </div>
+<!--                        <div class="manageExams mt-5 p-2">-->
+<!--                            <div class="text-right mb-4">-->
+<!--                                <button type="submit" name="addQuestionButton" id="addQuestionButton"> + Question</button>-->
+<!--                            </div>-->
+<!--                            <div class="card addQuestion-card">-->
+<!--                                <h5 class="card-header">Q1-->
+<!--                                    <input type="text" class="col-11" value="">-->
+<!--                                </h5>-->
+<!--                                <div class="card-body p-4">-->
+<!--                                    <div class="row mb-4">-->
+<!--                                        <div class="col-12 col-md-6">-->
+<!--                                           Ans1-->
+<!--                                            <input type="text" name="ans1Input" id="ans1Input">-->
+<!--                                        </div>-->
+<!--                                        <div class="col-12 col-md-6">-->
+<!--                                          Ans2-->
+<!--                                            <input type="text" name="ans2Input" id="ans2Input">-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                    <div class="row">-->
+<!--                                        <div class="col-12 col-md-6">-->
+<!--                                          Ans3-->
+<!--                                            <input type="text" name="ans3Input" id="ans3Input">-->
+<!--                                        </div>-->
+<!--                                        <div class="col-12 col-md-6">-->
+<!--                                            Ans4-->
+<!--                                            <input type="text" name="ans4Input" id="ans4Input">-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                            <div class="mt-5 text-right">-->
+<!--                                <button type="submit" name="submitExam" id="submitExam">Submit</button>-->
+<!--                            </div>-->
+<!--                        </div>-->
                     </div>
                 </div>
             </div>

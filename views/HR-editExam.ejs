@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/style.css">
     <title>Home</title>
     <link rel="shortcut icon" href="images/if_laptop_1805073.ico" type="image/x-icon">
 </head>
@@ -35,43 +35,14 @@
                         </div>
 
                         <div class="editExams mt-5 p-2">
-                            <div class="text-right mb-4">
-                                <button> + Question</button>
-                            </div>
-                            <div class="card editQuestion-card">
-                                <h5 class="card-header">Q1
-                                    <input type="text" class="col-10" value="">
-                                </h5>
-                                <div class="card-body p-4">
-                                    <div class="row mb-4">
-                                        <div class="col-12 col-md-6">
-                                            <input type="radio" name="choice" id=""
-                                                class="form-radio border border-danger" value="">
-                                            <input type="text">
-                                        </div>
-                                        <div class="col-12 col-md-6">
-                                            <input type="radio" name="choice" id=""
-                                                class="form-radio border border-danger" value="">
-                                            <input type="text">
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-12 col-md-6">
-                                            <input type="radio" name="choice" id=""
-                                                class="form-radio border border-danger" value="">
-                                            <input type="text">
-                                        </div>
-                                        <div class="col-12 col-md-6">
-                                            <input type="radio" name="choice" id=""
-                                                class="form-radio border border-danger" value="">
-                                            <input type="text">
-                                        </div>
-                                    </div>
+                            <form method="post" action="/updateExam">
+                                <div>
+                                    <input type="hidden" name="eid" value="<%= eid %>"  />
+                                    <input type="text" name="type" value="<%= exam_type %>"/>
+                                    <button type="submit" class="btn btn-info ml-3">Submit</button>
+
                                 </div>
-                            </div>
-                            <div class="mt-5 text-right">
-                                <button type="submit">Submit</button>
-                            </div>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -91,9 +62,9 @@
     <!-- End Footer -->
 
 
-    <script src="javascripts/bootstrap.min.js"></script>
-    <script src="javascripts/jquery-3.4.1.min.js"></script>
-    <script src="javascripts/script.js"></script>
+    <script src="/javascripts/bootstrap.min.js"></script>
+    <script src="/javascripts/jquery-3.4.1.min.js"></script>
+    <script src="/javascripts/script.js"></script>
 </body>
 
 </html>

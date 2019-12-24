@@ -6,6 +6,7 @@ var question = require('../controllers/questionController');
 var position = require('../controllers/positionController');
 var sessionExam= require('../controllers/sessionExamController');
 var hr=require('../controllers/HR-Controller');
+var answer=require('../controllers/AnswerController');
 /* GET home page. */
 router.get('/',function (req,res,next) {
     res.render('index');
@@ -30,10 +31,27 @@ router.post('/addPosition',position.addPosition);
 router.get('/applicant/:email/cv',hr.showCv);
 router.get('/applicant/:email/approve',hr.approve);
 router.get('/applicant/:email/disapprove',hr.disApprove);
+router.post('/searchByType',exam.searchExamByType);
 /**----------------------**/
 
 /**HR Exams **/
 router.get('/hrExams',exam.index);
+router.get('/hrAddExam',exam.showAddExam);
+router.post('/addExam',exam.addExam);
+router.get('/deleteExam/:eid',exam.deleteExam);
+router.get('/showEditExam/:eid',exam.showEditExam);
+router.post('/updateExam',exam.updateExam)
+
+router.get('/showAddQuestion/:eid',question.addQuestionShow);
+router.post('/addQuestion',question.addQ);
+router.get('/:eid/deletequestion/:qid',question.deleteQ);
+router.get('/:eid/updatequestion/:qid',question.showUpdate);
+router.post('/updatequestion',question.updateQ);
+router.get('/:qid/showAddAnswer',answer.showAddAnswer);
+router.post('/addAnswer',answer.addAnswer);
+router.get('/:qid/deleteanswer/:aid',answer.deleteAnswer);
+router.get('/:qid/editAnswer/:aid',answer.showEditAnswer);
+router.post('/updateanswer',answer.updateAnswer);
 /**--------------------------- **/
 router.get('/header',function (req,res,next) {
     res.render('header');
@@ -62,9 +80,7 @@ router.get('/hrCandidateProfile',function (req,res,next) {
     res.render('HR-candidateProfile');
 });
 
-router.get('/hrAddExam',function (req,res,next) {
-    res.render('HR-addExam');
-});
+
 
 router.get('/candidateExams',function (req,res,next) {
     res.render('Candidate-allExams');
@@ -76,11 +92,6 @@ router.get('/CandidateExamPage',function (req,res,next) {
 });
 
 
-/** exam  **/
-router.post('/exam/add',exam.addExam);
-router.get('/exam/:eid/show',exam.showExam);
-router.put('/exam/:eid/update',exam.updateExam);
-/** ----------------------------------**/
 
 /** question  **/
 router.post('/question/addQ',question.addQ);

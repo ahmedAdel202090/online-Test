@@ -47,7 +47,7 @@ function updateAnwer(aid, qid, {text},correct) {
     });
 }
 
-function showAnwer(aid) {
+function findOne(aid) {
     return new Promise(resolve => {
         connection.connect().then((con) => {
             connection.excuteQuery("SELECT * FROM answer WHERE aid=" + aid, con)
@@ -59,12 +59,36 @@ function showAnwer(aid) {
     });
 }
 
-
+function all(qid){
+    return new Promise(resolve => {
+        connection.connect().then((con) => {
+            connection.excuteQuery("SELECT * FROM answer WHERE qid="+qid, con)
+                .then((response) => {
+                    response.end();
+                    resolve({result: response.result, next: module.exports});
+                });
+        });
+    });
+}
+function deleteAnswer(aid)
+{
+    return new Promise(resolve => {
+        connection.connect().then((con) => {
+            connection.excuteQuery("DELETE FROM answer WHERE aid="+aid, con)
+                .then((response) => {
+                    response.end();
+                    resolve({result: response.result, next: module.exports});
+                });
+        });
+    });
+}
 module.exports={
     addAnswer:addAnswer,
     selectRand_IncorrectAns:selectRand_IncorrectAns,
     selectRand_correctAns:selectRand_correctAns,
     updateAnwer:updateAnwer,
-    showAnwer:showAnwer
+    findOne:findOne,
+    all:all,
+    deleteAnswer:deleteAnswer
 
 }
