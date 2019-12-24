@@ -1,0 +1,77 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Home</title>
+    <link rel="shortcut icon" href="/images/if_laptop_1805073.ico" type="image/x-icon">
+</head>
+
+<body>
+<!-- Header -->
+
+<!-- End Header -->
+
+
+<!-- Main -->
+<section>
+    <div class="container">
+        <div class="row justify-content-around mt-5">
+            <div class="col-12 col-md-3">
+                <div class="list-group">
+                    <a href="/hrApplicants" class="list-group-item list-group-item-action">Applications</a>
+                    <a href="/hrExams" class="list-group-item list-group-item-action">Exams</a>
+                    <a href="/hrCandidates" class="list-group-item list-group-item-action">Candidates</a>
+                </div>
+            </div>
+            <div class="col-12 col-md-9">
+                <div class="hrAddExams-content">
+                    <div class="mb-5">
+                        <h3>Edit Answer</h3>
+                    </div>
+                    <div class="manageExams mt-5 p-2">
+                        <form method="post" action="/updateanswer">
+                            <div>
+                                <input type="hidden" name="qid" value="<%= qid %>"  />
+                                <input type="hidden" name="aid" value="<%= aid %>"  />
+                                <input type="text" name="text" value="<%= text %>"/>
+                            </div>
+                            <div class="mt-2">
+                                correct:
+                                <% if(correct==1){ %>
+                                    <input type="radio" name="correct" value="1" checked/>
+                                <% }else{ %>
+                                    <input type="radio" name="correct" value="1"/>
+
+                                <% } %>
+                                <button type="submit" class="btn btn-info ml-3">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End Main -->
+
+
+
+
+
+<!-- Footer -->
+
+<!-- End Footer -->
+
+
+<script src="/javascripts/bootstrap.min.js"></script>
+<script src="/javascripts/jquery-3.4.1.min.js"></script>
+<script src="/javascripts/script.js"></script>
+</body>
+
+</html>

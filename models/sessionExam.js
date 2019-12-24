@@ -1,13 +1,14 @@
 var connection = require('../connection');
 
-function add_Session_Exam(eid, {Applicant_email}) {
+function add_Session_Exam(values) {
     return new Promise((resolve => {
         connection.connect().then((con) => {
-            connection.excuteQuery("insert into session_exam (eid,applicant_email) values (" + eid + ",'" + Applicant_email + "')", con)
-                .then((response) => {
-                    response.end();
-                    resolve({result: response.result, next: module.exports});
-                });
+            connection.con.query("insert into session_exam (eid,applicant_email,deadline) values ?", [values],function(err,result){
+                if (err)
+                    console.log(err);
+                resolve({result:result});
+                connection.con.end();
+            });
         });
     }));
 }

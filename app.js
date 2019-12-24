@@ -7,8 +7,10 @@ var mysql =require('mysql');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-
+var Session=require('express-session');
+var FileStore=require('session-file-store')(Session);
 var app = express();
+var upload =require('express-fileupload');
 
 /*var con = mysql.createConnection({host:'localhost',user:'root',password:'',database:'online_test'});
 con.connect((err)=>{
@@ -24,10 +26,18 @@ app.set('view engine', 'ejs');
 
 app.use(logger('dev'));
 app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
 
+app.use(Session({
+  name:'session-id',
+  secret:'12345-67890-09876-54321',
+  saveUninitialized:false,
+  resave:false,
+  store:new FileStore()
+}));
+app.use(express.static(path.join(__dirname, 'public')));
+app.use(upload());
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 

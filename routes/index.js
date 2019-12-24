@@ -5,18 +5,58 @@ var exam = require('../controllers/ExamController');
 var question = require('../controllers/questionController');
 var position = require('../controllers/positionController');
 var sessionExam= require('../controllers/sessionExamController');
+var hr=require('../controllers/HR-Controller');
+var answer=require('../controllers/AnswerController');
 /* GET home page. */
-
 router.get('/',function (req,res,next) {
     res.render('index');
 });
 
-router.get('/signin',function (req,res,next) {
-    res.render('signin',{title:['Welcome','hello','dasd']});
-});
-router.get('/signup',function (req,res,next) {
-    res.render('signup');
-});
+/**applicant view**/
+router.post('/validate-candidate',applicant.validateEmail);
+router.get('/candidate-dashboard',applicant.index);
+router.get('/signin-applicant',applicant.showLogin);
+router.post('/applicant-login',applicant.login);
+router.get('/applicant/:email/apply/:pid',applicant.applyPosition);
+router.get('/signup-applicant',applicant.showSignUp);
+router.post('/register-applicant',applicant.signup);
+
+
+router.get('/logout',applicant.logout);
+/**---------------------------------------**/
+
+/**HR**/
+router.get('/hr-dashboard',hr.index);
+router.post('/addPosition',position.addPosition);
+router.get('/applicant/:email/cv',hr.showCv);
+router.get('/applicant/:email/approve',hr.approve);
+router.get('/applicant/:email/disapprove',hr.disApprove);
+router.post('/searchByType',exam.searchExamByType);
+/**----------------------**/
+
+/**HR Exams **/
+router.get('/hrExams',exam.index);
+router.get('/hrAddExam',exam.showAddExam);
+router.post('/addExam',exam.addExam);
+router.get('/deleteExam/:eid',exam.deleteExam);
+router.get('/showEditExam/:eid',exam.showEditExam);
+router.post('/updateExam',exam.updateExam);
+router.get('/showAddQuestion/:eid',question.addQuestionShow);
+router.post('/addQuestion',question.addQ);
+router.get('/:eid/deletequestion/:qid',question.deleteQ);
+router.get('/:eid/updatequestion/:qid',question.showUpdate);
+router.post('/updatequestion',question.updateQ);
+router.get('/:qid/showAddAnswer',answer.showAddAnswer);
+router.post('/addAnswer',answer.addAnswer);
+router.get('/:qid/deleteanswer/:aid',answer.deleteAnswer);
+router.get('/:qid/editAnswer/:aid',answer.showEditAnswer);
+router.post('/updateanswer',answer.updateAnswer);
+
+
+
+router.get('/assignexams/:email',hr.showAssignExams);
+router.post('/assignExams',hr.assignExams)
+/**--------------------------- **/
 router.get('/header',function (req,res,next) {
     res.render('header');
 });
@@ -24,13 +64,8 @@ router.get('/notifications',function (req,res,next) {
     res.render('notifications');
 });
 
-router.get('/hrApplicants',function (req,res,next) {
-    res.render('HR-main');
-});
 
-router.get('/hrExams',function (req,res,next) {
-    res.render('HR-exams');
-});
+
 
 router.get('/editExam',function (req,res,next) {
     res.render('HR-editExam');
@@ -49,29 +84,18 @@ router.get('/hrCandidateProfile',function (req,res,next) {
     res.render('HR-candidateProfile');
 });
 
-router.get('/hrAddExam',function (req,res,next) {
-    res.render('HR-addExam');
-});
+
 
 router.get('/candidateExams',function (req,res,next) {
     res.render('Candidate-allExams');
 });
 
-router.get('/CandidateAvaPositions',function (req,res,next) {
-    res.render('Candidate-avaPositions');
-});
 
 router.get('/CandidateExamPage',function (req,res,next) {
     res.render('Candidate-examPage');
 });
 
 
-/** exam  **/
-router.get('/exam/show',exam.showAll);
-router.post('/exam/add',exam.addExam);
-router.get('/exam/:eid/show',exam.showExam);
-router.put('/exam/:eid/update',exam.updateExam);
-/** ----------------------------------**/
 
 /** question  **/
 router.post('/question/addQ',question.addQ);
@@ -82,7 +106,6 @@ router.put('/question/:qid/update',question.updateQ);
 
 /** position  **/
 
-router.get('/position/showAll',position.showAll);
 
 /** ----------------------------------**/
 

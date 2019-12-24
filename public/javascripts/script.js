@@ -22,7 +22,3 @@ $(document).on('keydown', function (e) {
     }
 });
 
-// $(function () {
-//     $("#pageHeader").load("/public/views/header.html");
-// });
-

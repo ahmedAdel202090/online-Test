@@ -1,9 +1,9 @@
 var connection = require('../connection');
 
-function add({type}) {
+function add({type,name}) {
     return new Promise((resolve => {
         connection.connect().then((con)=>{
-            connection.excuteQuery("insert into exam (type) values ('"+type+"')",con)
+            connection.excuteQuery("insert into exam (name,type) values ('"+name+"','"+type+"')",con)
                 .then((response)=>{
                     response.end();
                     resolve({result:response.result,next:module.exports});
@@ -33,7 +33,16 @@ function findOne({eid})
         });
     });
 }
-
+function findByType(type) {
+    return new Promise( resolve => {
+        connection.connect().then((con)=>{
+            connection.excuteQuery("SELECT * FROM exam WHERE type='"+type+"'",con).then((response)=>{
+                response.end();
+                resolve({result:response.result,next:module.exports});
+            });
+        });
+    });
+}
 function update(eid,{type})
 {
     return new Promise( resolve => {
@@ -45,10 +54,21 @@ function update(eid,{type})
         });
     });
 }
-
+function deleteExam(eid){
+    return new Promise( resolve => {
+        connection.connect().then((con)=>{
+            connection.excuteQuery("DELETE FROM exam WHERE eid="+eid,con).then((response)=>{
+                response.end();
+                resolve({result:response.result,next:module.exports});
+            });
+        });
+    });
+}
 module.exports={
     add:add,
     findOne:findOne,
     update,update,
-    all:all
+    all:all,
+    findByType:findByType,
+    deleteExam:deleteExam
 }
