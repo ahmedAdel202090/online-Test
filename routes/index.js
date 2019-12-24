@@ -40,8 +40,7 @@ router.get('/hrAddExam',exam.showAddExam);
 router.post('/addExam',exam.addExam);
 router.get('/deleteExam/:eid',exam.deleteExam);
 router.get('/showEditExam/:eid',exam.showEditExam);
-router.post('/updateExam',exam.updateExam)
-
+router.post('/updateExam',exam.updateExam);
 router.get('/showAddQuestion/:eid',question.addQuestionShow);
 router.post('/addQuestion',question.addQ);
 router.get('/:eid/deletequestion/:qid',question.deleteQ);
@@ -52,6 +51,11 @@ router.post('/addAnswer',answer.addAnswer);
 router.get('/:qid/deleteanswer/:aid',answer.deleteAnswer);
 router.get('/:qid/editAnswer/:aid',answer.showEditAnswer);
 router.post('/updateanswer',answer.updateAnswer);
+
+
+
+router.get('/assignexams/:email',hr.showAssignExams);
+router.post('/assignExams',hr.assignExams)
 /**--------------------------- **/
 router.get('/header',function (req,res,next) {
     res.render('header');
